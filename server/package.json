@@ -9,7 +9,7 @@
     "start": "node server.js",
     "deploy": "npm run build-client && npm run build-admin && npm start",
     "deploy-dev": "npm run build-client && npm run build-admin && nodemon server.js",
-    "deploy-prod": "npm run build-client && npm run build-admin && node server.js",
+    "deploy-prod": "npm run build-client && npm run build-admin",
     "dev": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
