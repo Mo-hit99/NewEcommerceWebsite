@@ -154,7 +154,7 @@ export default function AllCollectionsItems() {
                       <div className="group relative w-[calc(250px-20px)] p-2 mx-auto">
                         <img
                           alt={product.imageAlt}
-                          src={`http://localhost:4000/productData/${product.imageUrl[0]}`}
+                          src={`${product.imageUrl[0]}`}
                           className="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 group-hover:scale-90 transition-all lg:aspect-auto lg:h-80 z-10"
                         />
                         <div className="mt-4 flex justify-between">
