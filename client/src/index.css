@@ -1,0 +1,352 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* navlinks */
+  .loop-slider {
+    overflow: hidden;
+    width: 100%;
+    position: fixed;
+    background-color: #fff;
+    top: 0;
+    left: 0;
+    z-index: 40;
+    margin: o auto;
+  }
+  .loop-slider .inner {
+    display: flex;
+    width: fit-content;
+    animation: loop 20s linear infinite;
+  }
+  .tag {
+    display: flex;
+    align-items: center;
+    gap: 0 0.2rem;
+    font-size: 0.9rem;
+    padding: 0.7rem 1rem;
+    flex-shrink: 0;
+    white-space: nowrap;
+    
+  }
+  
+  
+  @keyframes loop {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+
+  /* product grid layout for homepage */
+.top-review-grid-container {
+    width: min(90%, 100rem);
+    margin: 0 auto;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+  }
+  
+  img {
+    width: 100%;
+    display: block;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  h2 {
+    font-size: clamp(1rem, 0.8750rem + 0.6250vw, 1.5rem);
+    line-height: 1.3;
+    font-weight: 700;
+  }
+  
+  .top-review-grid-wrapper {
+    display: grid;
+    grid-template-columns: 25% 30% 15% 25%;
+    gap: 15px;
+    place-content: center;
+    grid-template-rows: 50% 50%;
+    height: 80vh;
+    min-height: 460px;
+    padding: max(2vh, 1.5rem);
+  }
+  @media screen and (max-width: 690px) {
+    .top-review-grid-wrapper {
+      height: 65vh;
+    }
+  }
+  @media screen and (max-width: 470px) {
+    .top-review-grid-wrapper {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 35%);
+    }
+  }
+  .top-review-grid-wrapper .card {
+    border-radius: 25px;
+    box-shadow: -2px 4px 15px rgba(0, 0, 0, 0.26);
+  }
+  @media screen and (max-width: 470px) {
+    .top-review-grid-wrapper .card {
+      grid-column: span 1;
+    }
+  }
+  .top-review-grid-wrapper .card:nth-child(2) {
+    grid-column: 2/3;
+    grid-row: span 2;
+  }
+  @media screen and (max-width: 690px) {
+    .top-review-grid-wrapper .card:nth-child(2) {
+      grid-column: span 1;
+      grid-row: span 1;
+    }
+  }
+  .top-review-grid-wrapper .card:nth-child(3) {
+    grid-column: span 2;
+  }
+  @media screen and (max-width: 690px) {
+    .top-review-grid-wrapper .card:nth-child(3) {
+      grid-column: 2/4;
+      grid-row: 1/2;
+    }
+  }
+  @media screen and (max-width: 690px) {
+    .top-review-grid-wrapper .card:nth-child(6) {
+      grid-column: 2/4;
+      grid-row: 2/3;
+    }
+  }
+  @media screen and (max-width: 470px) {
+    .top-review-grid-wrapper .card:nth-child(5) {
+      grid-column: span 2;
+    }
+  }
+  .top-review-grid-wrapper .card p {
+    font-size: clamp(0.9rem, 0.8750rem + 0.1250vw, 1rem);
+    line-height: 1.4;
+  }
+  .top-review-grid-wrapper .card img {
+    border-radius: 25px;
+  }
+  .top-review-grid-wrapper .card .card__img {
+    position: relative;
+    height: 100%;
+  }
+  .top-review-grid-wrapper .card .card__img .card__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: "";
+    color: #fff;
+    padding: clamp(0.938rem,5vw,1.563rem);
+    background: #02022e;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.57) 0%, rgba(255, 255, 255, 0) 100%);
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+  }
+  .top-review-grid-wrapper .card .card__img span {
+    position: absolute;
+    top: 25px;
+    left: min(2vmax, 1.563rem);
+    color: #ff7b29;
+    background: #fff;
+    border-radius: 50px;
+    padding: 2px 8px 2px 6px;
+    display: flex;
+  }
+  @media screen and (max-width: 690px) {
+    .top-review-grid-wrapper .card .card__img span {
+      top: 20px;
+    }
+  }
+  @media screen and (max-width: 470px) {
+    .top-review-grid-wrapper .card .card__img span {
+      top: 15px;
+    }
+  }
+  .top-review-grid-wrapper .card .card__img span svg {
+    fill: #ff7b29;
+    width: 20px;
+    margin-right: 2px;
+  }
+  /* productpage btn */
+.productpage-btn {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  color: #18181a;
+  display: inline-block;
+  font-size: 15px;
+  line-height: 15px;
+  padding: 18px 18px 17px;
+  text-decoration: none;
+  cursor: pointer;
+  background: #fff;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.productpage-btn span:first-child {
+  position: relative;
+  transition: color 600ms cubic-bezier(0.48, 0, 0.12, 1);
+  z-index: 10;
+}
+
+.productpage-btn span:last-child {
+  color: white;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  transition: all 500ms cubic-bezier(0.48, 0, 0.12, 1);
+  z-index: 100;
+  opacity: 0;
+  top: 50%;
+  left: 50%;
+  transform: translateY(225%) translateX(-50%);
+  height: 14px;
+  line-height: 13px;
+}
+
+.productpage-btn:after {
+  content: "";
+  position: absolute;
+  bottom: -30%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  transform-origin: bottom center;
+  transition: transform 600ms cubic-bezier(0.48, 0, 0.12, 1);
+  transform: skewY(9.3deg) scaleY(0);
+  z-index: 50;
+}
+
+.productpage-btn:hover:after {
+  transform-origin: bottom center;
+  transform: skewY(9.3deg) scaleY(2);
+}
+
+.productpage-btn:hover span:last-child {
+  transform: translateX(-50%) translateY(-100%);
+  opacity: 1;
+  transition: all 900ms cubic-bezier(0.48, 0, 0.12, 1);
+}
+.text{
+  text-align: center;
+}
+/* lazy loader */
+.loader {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 270px;
+  justify-content: center;
+}
+
+.truckWrapper {
+  width: 200px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  justify-content: flex-end;
+  overflow-x: hidden;
+}
+/* truck upper body */
+.truckBody {
+  width: 130px;
+  height: fit-content;
+  margin-bottom: 6px;
+  animation: motion 1s linear infinite;
+}
+/* truck suspension animation*/
+@keyframes motion {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(3px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+/* truck's tires */
+.truckTires {
+  width: 130px;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 10px 0px 15px;
+  position: absolute;
+  bottom: 0;
+}
+.truckTires svg {
+  width: 24px;
+}
+
+.road {
+  width: 100%;
+  height: 1.5px;
+  background-color: #282828;
+  position: relative;
+  bottom: 0;
+  align-self: flex-end;
+  border-radius: 3px;
+}
+.road::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 100%;
+  background-color: #282828;
+  right: -50%;
+  border-radius: 3px;
+  animation: roadAnimation 1.4s linear infinite;
+  border-left: 10px solid white;
+}
+.road::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 100%;
+  background-color: #282828;
+  right: -65%;
+  border-radius: 3px;
+  animation: roadAnimation 1.4s linear infinite;
+  border-left: 4px solid white;
+}
+
+.lampPost {
+  position: absolute;
+  bottom: 0;
+  right: -90%;
+  height: 90px;
+  animation: roadAnimation 1.4s linear infinite;
+}
+
+@keyframes roadAnimation {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(-350px);
+  }
+}
+
+}
